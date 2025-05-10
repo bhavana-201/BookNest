@@ -12,7 +12,7 @@ BookNest is a simple web app to track your books, set reading goals, and manage 
 
 ## Tech Stack
 
-- **Frontend:** React.js, Tailwind CSS (optional)
+- **Frontend:** React.js
 - **Backend:** Node.js, Express
 - **Database:** MongoDB
 - **Authentication:** JWT, bcrypt
