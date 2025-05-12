@@ -40,7 +40,7 @@ body{
     /* background-color: #202954;  rich or navy blue*/
     /* background-color: #2e1e1e;  red leather types*/
     /* background-color: #1e1e1e;  brown*/
-    background-color: black; 
+    background-color: #547144; 
     color: white;
 }
 .hero-section{
@@ -64,26 +64,6 @@ body{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .hero-img h1{
     position: absolute;
     font-size: 2.5rem;
@@ -92,7 +72,7 @@ body{
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
