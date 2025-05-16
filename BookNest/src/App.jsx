@@ -1,4 +1,5 @@
 import Features from "./Features";
+import { Link } from "react-router-dom";
 
 function App(){
   return(
@@ -9,7 +10,7 @@ function App(){
                   <div className ="links">
                       <ul className="l">
                           <li className="rl">Home</li>
-                          <li className="rl">Library</li>
+                          <li className="rl"><Link to="library">Library</Link></li>
                           <li className="rl">Login</li>
                           <li className="rl">Join now</li>
                           <li className="rl">Profile</li> 
