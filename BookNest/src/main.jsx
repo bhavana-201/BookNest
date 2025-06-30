@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import './index.css'
 import App from './App.jsx'
-import Library from './Library.jsx'
+import Login from './Login.jsx'
+import Dashboard from './Dashboard.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -11,8 +13,12 @@ const router = createBrowserRouter([
     element:<App/>,
   },
   {
-    path :"library",
-    element:<Library/>,
+    path :"login",
+    element:<Login/>,
+  },
+  {
+    path:"dashboard",
+    element: <Dashboard/>,
   },
 ])
 
