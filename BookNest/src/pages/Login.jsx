@@ -24,6 +24,7 @@ const Login = () => {
         { theme: "outline", size: "large" }
       );
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleCredentialResponse = async (response) => {
