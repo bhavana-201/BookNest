@@ -8,7 +8,7 @@ const theme = createTheme({
         },
         text: {
             primary : "#ffffffff",
-            secondary : "#CCCCCC",
+            secondary : "#DCD4C7",
 
         },
         primary : {
@@ -27,6 +27,59 @@ const theme = createTheme({
         success: {
             main: '#FF9800',
         },
+    },
+    components : {
+        MuiButton : {
+            defaultProps:{
+                variant : "contained",
+                color : "primary",//for btn bg
+                size : "small",
+            },
+            styleOverrides : {
+                root : {
+                    fontFamily : "Inter",
+                    fontSize : "1rem",
+                    color:"white",
+                    textTransform : "none",
+                    border : "4px",
+                }
+                
+            }
+
+        },
+        MuiTypography : {
+            variants : [
+                {
+                    props : { variant : 'heading' },
+                    style : {
+                        fontFamily : 'Playfair Display',
+                        fontSize : "4rem",
+                        color: theme => theme.palette.text.secondary,
+                    }
+
+                },
+                {
+                    props : { variant : 'subheading' },
+                    style : {
+                        fontFamily : 'Playfair Display',
+                        fontSize : "2rem",
+                        color: theme => theme.palette.text.primary,
+                    }
+
+                },
+                {
+                    props : { variant : 'body' },
+                    style : {
+                        fontFamily : 'Inter',
+                        fontSize : "99rem",
+                        color: theme => theme.palette.text.secondary,
+                    }
+
+                }
+        ],
+
+        },
+
     }
 
 
