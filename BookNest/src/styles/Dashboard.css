@@ -1,0 +1,9 @@
+.global-container {
+    background-color: #141514;
+    min-height: 100%; /* Now this 100% will refer to the 100% height of #root */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

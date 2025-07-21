@@ -1,0 +1,12 @@
+/* src/index.css or src/global.css */
+
+html, body, #root { /* #root is the default id for the div React mounts into */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000; /* Set a fallback if global-container doesn't cover everything */
+  color: #fff; /* Good for default text color if background is dark */
+}
+
+

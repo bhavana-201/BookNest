@@ -12,9 +12,11 @@ const Home = () => {
             <nav className="container nav">
                 <div className="title">BookNest</div>
                 <ul className="nav-list">
-                    <li className="nav-item">Home</li>
                     <li className="nav-item">
-                    <Link to="/login">Login/Signup</Link>
+                        <Link className = "link" to = "/">Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="link" to="/login">Login/Signup</Link>
                     </li>
                 </ul>
             </nav>
