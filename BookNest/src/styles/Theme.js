@@ -62,16 +62,26 @@ const theme = createTheme({
                     props : { variant : 'subheading' },
                     style : {
                         fontFamily : 'Playfair Display',
-                        fontSize : "2rem",
+                        fontSize : "1.5rem",
                         color: "#ffffffff",
                     }
 
                 },
                 {
+                    props : { variant : 'book-name' },
+                    style : {
+                        fontFamily : 'Playfair Display',
+                        fontSize : "1.5rem",
+                        color: "#ffffffff",
+                    }
+
+                },
+                
+                {
                     props : { variant : 'body' },
                     style : {
                         fontFamily : 'Inter',
-                        fontSize : "1.5rem",
+                        fontSize : "1.2rem",
                         color: "#a7a093ff",
                     }
 

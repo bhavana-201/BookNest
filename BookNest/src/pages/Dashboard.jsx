@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import "../styles/Dashboard.css";
+import Card from "../components/Card";
 
 function Dashboard() {
   const navItems = ["Add Book", "Reflections", "Stats"];
@@ -91,7 +92,7 @@ function Dashboard() {
               mx: "auto",//centers it horizontally
             }}>
             <Typography variant="subheading">Currently Reading<br/></Typography>
-            {/* <Card/> */}
+            <Card/>
             
             <Typography variant="subheading">Finished Reading</Typography>
             {/* <Card/> */}
