@@ -58,7 +58,7 @@ No reading inside the app - just log, organize, and focus on your real-world rea
 ## 🧠 Inspiration
 
 > "Less screen time, more book time."  
-> BookNest was born from the need for a minimalist, no-frills book tracking tool to focus on offline status, consistency and reading goals
+> BookNest was born from the need for a minimalist, no-frills book tracking tool to focus on offline status, consistency and reading goals.
 > BookNest stands out by doing less so you can read more. Just track, update, and unplug.
 
 
