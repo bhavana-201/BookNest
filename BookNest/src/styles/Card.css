@@ -1,5 +1,6 @@
 .cards{
     display: flex;
+    flex-direction: column;
     gap: 2rem;
     background-color: #141514;
     max-width: 60rem;
@@ -7,8 +8,21 @@
     padding: 1rem 2rem;
     border:2px solid  #292929;
     margin: 1rem 0;
+}
+.book-card {
+    display: flex;
     justify-content: space-between;
-    align-items : center;
+    align-items: center;
+    background-color: #1c1c1c;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #292929;
+    transition: 0.2s ease;
+}
+
+.book-card:hover {
+    box-shadow: 0 0 10px #ffa72633;
+    transform: scale(1.01);
 }
 .book-info{
     display: flex;
@@ -23,14 +37,10 @@
 img{
     border-radius: 5px;
     width: 5rem;
-    height: auto;
+    height: 5rem;
 }
 .button{
     display: flex;
     align-items: center;
 }
-.cards:hover {
-  box-shadow: 0 0 10px #ffa72633;
-  transform: scale(1.01);
 
-}

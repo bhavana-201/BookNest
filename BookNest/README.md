@@ -10,3 +10,12 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+| Task                             | Est. Time | Why                                                         |
+| -------------------------------- | --------- | ----------------------------------------------------------- |
+| 1. Progress Bar                  | 3–5 hrs   | Set up, wire to state, style, test                          |
+| 2. Search Bar                    | 2–3 hrs   | Simple filter logic + styling                               |
+| 3. Auto-Move to Finished         | 3 hrs     | Logic + state split (`currentlyReading`, `finishedReading`) |
+| 4. Book API Integration          | 5–6 hrs   | Choose API, structure response, use fallback                |
+| 5. Right-Side Dashboard          | 6–8 hrs   | Design layout + populate with mock stats                    |
+| 6. Add Book / Reflection Buttons | 5–7 hrs   | onClick logic, input fields, state updates                  |

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
@@ -7,9 +7,12 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import "../styles/Dashboard.css";
 import Card from "../components/Card";
+import Addbtn from "../components/Addbtn";
 
 function Dashboard() {
-  const navItems = ["Add Book", "Reflections", "Stats"];
+  const [addBook, setAddbook] = useState(false);
+  // const [reflection, setReflection] = useState(false);
+  // const [stats, setStats] = useState(false);
 
   return (
     <>
@@ -33,6 +36,7 @@ function Dashboard() {
               boxShadow: "none",
             }}
           >
+            
             <Toolbar disableGutters sx={{backgroundColor : "#0C0B0C", borderRadius : "15px"}}>
               <Box
                 sx={{
@@ -48,17 +52,26 @@ function Dashboard() {
                 <Typography variant="subheading">
                   BookNest
                 </Typography>
-                <Box>  
-                  {/* only for nav buttons */}
-                  {navItems.map((item) => (
-                    <Button
-                      key={item}
-                      variant="text"
-                      sx={{ marginLeft: 3 }}
-                    >
-                      {item}
+                
+                  <Box>
+                    <Button variant="text" sx={{ ml: 3 }} onClick={() => setAddbook(true)}>
+                      <Typography variant="body1" sx={{ textTransform: "none" }}>
+                        Add Book
+                      </Typography>
+                      
                     </Button>
-                  ))}
+
+                    {/* <Button variant="text" sx={{ ml: 3 }} onClick={() => setReflection(true)}>
+                      <Typography variant="body1" sx={{ textTransform: "none" }}>
+                        Reflections
+                      </Typography>
+                    </Button>
+
+                    <Button variant="text" sx={{ ml: 3 }} onClick={() => setStats(true)}>
+                      <Typography variant="body1" sx={{ textTransform: "none" }}>
+                        Stats
+                      </Typography>
+                    </Button> */}
                 </Box>
               </Box>
             </Toolbar>
@@ -77,11 +90,11 @@ function Dashboard() {
             }}
           >
             <Typography variant="heading">
-              Welcome back, Bubby!<br/>
+              Welcome!<br/>
             </Typography>
             <Typography variant="body">
                 Here's your Shelf
-              </Typography>
+            </Typography>
             
           </Box>
           <Box 
@@ -95,12 +108,14 @@ function Dashboard() {
             <Card/>
             
             <Typography variant="subheading">Finished Reading</Typography>
-            {/* <Card/> */}
+            <Card/>
           </Box>
         </Box>
       </div>
+      {addBook && <Addbtn open={addBook} onClose={() => setAddbook(false)} />}
     </>
   );
 }
 
 export default Dashboard;
+

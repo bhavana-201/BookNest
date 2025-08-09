@@ -16,7 +16,8 @@ const Home = () => {
                         <Link className = "link" to = "/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="link" to="/login">Login/Signup</Link>
+                        {/* <Link className="link" to="/login">Login/Signup</Link> */}
+                        <Link className="link" to="/dashboard">Dashboard</Link>
                     </li>
                 </ul>
             </nav>
