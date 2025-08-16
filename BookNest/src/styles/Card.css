@@ -1,16 +1,19 @@
-.cards{
+/* .cards{
     display: flex;
-    flex-direction: column;
     gap: 2rem;
     background-color: #141514;
-    max-width: 60rem;
+    width: 40rem;
+    height: 10rem;
     border-radius: 10px;
     padding: 1rem 2rem;
     border:2px solid  #292929;
     margin: 1rem 0;
-}
+    flex-wrap: wrap;
+} */
 .book-card {
     display: flex;
+    width: 35rem;
+    height: 9rem;
     justify-content: space-between;
     align-items: center;
     background-color: #1c1c1c;

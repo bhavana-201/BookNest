@@ -1,33 +1,33 @@
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
-    palette:{
-        mode : 'dark',
-        background : {
-            default : "#0C0B0C",
-        },
-        text: {
-            primary : "#ffffffff",
-            secondary : "#976b24ff",
-
-        },
-        primary : {
-            main : "#D67D3E",
-            dark : "#98511eff"
-        },
-        error: {
-            main: '#EF5350',
-            },
-        warning: {
-            main: '#FF9800',
-        },
-        info: {
-            main: '#2196F3',
-        },
-        success: {
-            main: '#FF9800',
-        },
+    palette: {
+      mode: "dark",
+      background: {
+        default: "#000000", // var(--background-color)
+        paper: "#1d1d1f", // var(--card-background)
+      },
+      text: {
+        primary: "#ffffff", // var(--primary-color)
+        secondary: "#999999", // var(--secondary-color)
+      },
+      primary: {
+        main: "#7a7aff", // var(--accent-color)
+        dark: "#6a6aff",
+      },
+      error: {
+        main: "#EF5350",
+      },
+      warning: {
+        main: "#FF9800",
+      },
+      info: {
+        main: "#2196F3",
+      },
+      success: {
+        main: "#4caf50",
     },
+  },
     components : {
         MuiButton : {
             defaultProps:{
@@ -37,23 +37,29 @@ const theme = createTheme({
             },
             styleOverrides : {
                 root : {
-                    fontFamily : "Inter",
+                    fontFamily: "'Roboto', sans-serif",
                     fontSize : "1rem",
+                    borderRadius: "50px",
+                    padding: "0.75rem 1.5rem",
                     color:"white",
                     textTransform : "none",
                     border : "4px",
+                    transition: "background-color 0.3s ease, transform 0.3s ease",
+          
                 }
                 
             }
 
         },
         MuiTypography : {
+          fontFamily: "'Roboto', sans-serif",
             variants : [
                 {
                     props : { variant : 'heading' },
                     style : {
-                        fontFamily : 'Playfair Display',
+                        fontFamily : "'Playfair Display', serif",
                         fontSize : "4rem",
+                        fontWeight: "700",
                         color: "#ffffffff",
                     }
 
@@ -61,8 +67,9 @@ const theme = createTheme({
                 {
                     props : { variant : 'subheading' },
                     style : {
-                        fontFamily : 'Playfair Display',
+                        fontFamily : "'Playfair Display', serif",
                         fontSize : "1.5rem",
+                        fontWeight: "700",
                         color: "#ffffffff",
                     }
 
@@ -80,9 +87,8 @@ const theme = createTheme({
                 {
                     props : { variant : 'body' },
                     style : {
-                        fontFamily : 'Inter',
-                        fontSize : "1.2rem",
-                        color: "#a7a093ff",
+                        fontSize : "1rem",
+                        color: "#999999",
                     }
 
                 }
@@ -92,3 +98,7 @@ const theme = createTheme({
 })
 
 export default theme;
+
+
+
+

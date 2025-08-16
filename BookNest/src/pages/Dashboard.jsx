@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
@@ -8,12 +9,50 @@ import Divider from "@mui/material/Divider";
 import "../styles/Dashboard.css";
 import Card from "../components/Card";
 import Addbtn from "../components/Addbtn";
+import { styled } from "@mui/material/styles";
 
+const StyledSearchBar = styled("input")(({ theme }) => ({
+    width: "100%" ,
+    maxWidth: "400px",
+    height: "40px",
+    borderRadius: "20px",
+    backgroundColor: theme.palette.background.paper,
+    padding: "10px",
+    color: theme.palette.text.primary,
+    fontFamily: theme.typography.fontFamily,
+    fontSize: "15px",
+    "&::placeholder": {
+    color: theme.palette.text.secondary,
+    },
+    "&:focus": {
+      boxShadow: `0 0 0 2px ${theme.palette.primary.main}`,
+    },
+    outline: "none",
+    border:"none",
+
+  }));
 function Dashboard() {
   const [addBook, setAddbook] = useState(false);
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   // const [reflection, setReflection] = useState(false);
   // const [stats, setStats] = useState(false);
+  
 
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      axios.get(`/api/books/search?query=${search}`)
+      .then(response => {
+        console.log("Search Results:", response.data);
+        setSearchResults(response.data);
+        setSearch(""); // Clear the search input after submission
+        // Handle search results here, e.g., update state to display results
+      })
+      .catch(error => {
+        console.error("Error fetching search results:", error);
+      });
+    }
+  };
   return (
     <>
       <div className="global-container">
@@ -52,7 +91,7 @@ function Dashboard() {
                 <Typography variant="subheading">
                   BookNest
                 </Typography>
-                
+                <StyledSearchBar id="search-bar" placeholder="Search here..." onChange={(e) => setSearch(e.target.value)} onKeyDown={handleSearch}/>
                   <Box>
                     <Button variant="text" sx={{ ml: 3 }} onClick={() => setAddbook(true)}>
                       <Typography variant="body1" sx={{ textTransform: "none" }}>
@@ -97,19 +136,34 @@ function Dashboard() {
             </Typography>
             
           </Box>
-          <Box 
-          sx={{
-              maxWidth: "1200px",
-              px: "0",
-              pt: "2rem",
-              mx: "auto",//centers it horizontally
-            }}>
+          
+              {searchResults.length > 0 ? (
+                <Box sx={{ display: "flex",
+                    gap: "2rem",
+                    backgroundColor:" #141514",
+                    maxWidth: "1200px",
+                    margin: "auto",//centers it horizontally
+                    borderRadius: "10px",
+                    padding: "1rem 2rem",
+                    border: "2px solid  #292929",
+                    flexWrap: "wrap"}}>
+                  {searchResults.map((book) => (
+                    <Card book={book} key={book.id} />
+                  ))}
+                  </Box>) : (
+                  <Box 
+                      sx={{
+                        maxWidth: "1200px",
+                        px: "0",
+                        pt: "2rem",
+                        mx: "auto",//centers it horizontally
+                      }}>
             <Typography variant="subheading">Currently Reading<br/></Typography>
-            <Card/>
-            
+            {/* <Card /> */}
+          
             <Typography variant="subheading">Finished Reading</Typography>
-            <Card/>
-          </Box>
+            {/* <Card/> */}
+                </Box> )}
         </Box>
       </div>
       {addBook && <Addbtn open={addBook} onClose={() => setAddbook(false)} />}
