@@ -1,8 +1,10 @@
 import { OAuth2Client } from 'google-auth-library';// Google's official client library for OAuth
+import dotenv from 'dotenv';
 
-const clientId = .
+dotenv.config(); // Load environment variables from .env file
+const clientId = process.env.GOOGLE_CLIENT_ID; // Your Google Client ID from .env
 
-export default auth(){
+function auth(){
     app.post('/api/auth/google', async (req, res) => {
         const { credential } = req.body;
 
@@ -25,4 +27,5 @@ export default auth(){
             res.status(401).json({ error: 'Invalid token' });
         }
     });
-}
+};
+export default auth;
