@@ -19,12 +19,13 @@ html, body {
   color: var(--primary-color);
   font-family: var(--font-sans);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2rem;  
 }
 
 .section-heading {
@@ -44,6 +45,7 @@ html, body {
   background-color: var(--background-color);
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--card-background);
+  scroll-snap-align: start;
 }
 
 .nav {
@@ -80,10 +82,24 @@ html, body {
 .nav-item .link.active {
   color: var(--primary-color);
 }
-
+/* carousel effect  */
+.section-wrapper{
+  height: 100vh;
+  position: relative;
+  
+}
+.section-content{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  
+}
 .hero-section {
   text-align: center;
   padding: 8rem 0;
+  animation: carousel-vertical 1s ease forwards;
+  scroll-snap-align: start;
+  z-index: 50;
 }
 
 .hero-content {
@@ -129,7 +145,30 @@ html, body {
 
 /* Features Section */
 .features-section {
+  
   padding: 4rem 0;
+  animation: carousel-vertical 1s ease-in forwards;
+  animation-range: entry 0% cover 50%;
+  animation-timeline: view();
+  z-index: 60;
+
+}
+@keyframes carousel-vertical{
+  0%{
+    opacity: 0;
+    transform: translateX(1000px);
+    visibility: hidden;
+  }
+  50%{
+    opacity: 0.6;
+
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+  
 }
 
 .features-container {
@@ -181,8 +220,13 @@ html, body {
 
 .how-it-works-section {
   padding: 4rem 0;
-  background-color: var(--card-background);
+  /* background-color: var(--card-background); */
   text-align: center;
+  animation: carousel-vertical 1s ease forwards;
+  animation-range: entry 0% cover 50%;
+  animation-timeline: view();
+  z-index: 70;
+
 }
 
 .steps-container {
@@ -217,7 +261,12 @@ html, body {
 .cta-banner {
   padding: 6rem 0;
   text-align: center;
-  background: linear-gradient(135deg, var(--background-color), #0a0a0a);
+  /* background: linear-gradient(135deg, var(--background-color), #0a0a0a); */
+  z-index: 80;
+  animation: carousel-vertical 1s ease forwards;
+  animation-range: entry 0% cover 30%;
+  animation-timeline: view();
+
 }
 
 .cta-content h2 {
@@ -239,6 +288,7 @@ html, body {
   padding: 2rem 0;
   border-top: 1px solid var(--card-background);
   margin-top: 4rem;
+
 }
 
 .home-footer p {
